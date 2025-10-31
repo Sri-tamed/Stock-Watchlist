@@ -1,0 +1,5 @@
+{
+  "name": "Stock Watchlist",
+  "description": "A simple and elegant web application to create and manage a personal watchlist of stock symbols. Add, view, and remove stocks with ease, with all data saved locally in your browser.",
+  "requestFramePermissions": []
+}
