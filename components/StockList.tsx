@@ -1,29 +1,27 @@
-
 import React from 'react';
-import StockItem from './StockItem';
+import StockCard from './StockCard';
+import { Stock } from '../App';
 
 interface StockListProps {
-  stocks: string[];
+  stocks: Stock[];
   onRemoveStock: (symbol: string) => void;
 }
 
 const StockList: React.FC<StockListProps> = ({ stocks, onRemoveStock }) => {
   if (stocks.length === 0) {
     return (
-      <div className="text-center py-10 px-6 bg-slate-800/50 rounded-lg border border-slate-700">
-        <h3 className="text-lg font-medium text-slate-400">Your watchlist is empty.</h3>
-        <p className="text-slate-500 mt-1">Add a stock symbol above to get started.</p>
+      <div className="text-center py-16 px-6 bg-slate-900/40 rounded-2xl border border-slate-700/50">
+        <h3 className="text-lg font-semibold text-slate-300">Your watchlist is empty.</h3>
+        <p className="text-slate-400 mt-2">Add stocks to get started.</p>
       </div>
     );
   }
 
   return (
-    <div className="bg-slate-800/50 rounded-lg shadow-lg border border-slate-700">
-        <ul className="divide-y divide-slate-700">
-            {stocks.map((stock) => (
-                <StockItem key={stock} symbol={stock} onRemoveStock={onRemoveStock} />
-            ))}
-        </ul>
+    <div className="space-y-4">
+        {stocks.map((stock) => (
+            <StockCard key={stock.symbol} stock={stock} onRemove={onRemoveStock} />
+        ))}
     </div>
   );
 };
