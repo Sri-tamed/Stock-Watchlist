@@ -1,5 +1,5 @@
 
-<img width="1200" height="475
+<img width="1200" 
 
 
 # Run and deploy your AI Studio app
